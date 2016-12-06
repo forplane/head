@@ -9,11 +9,14 @@ import view.HeadToolBar;
 
 public class MainActivity extends Activity {
 
+    protected HeadToolBar headToolBar;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        HeadToolBar dddd = null;
-        dddd.setBackgroundColor(Color.RED);
+        headToolBar = (HeadToolBar) findViewById(R.id.head_toolbar);
+        headToolBar.setBackgroundColor(Color.RED);
     }
 }
