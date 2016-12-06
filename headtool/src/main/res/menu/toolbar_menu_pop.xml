@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- 同级的item有几个则在toolbar右边显示几个 -->
+    <!--
+        id:之后设置点击事件的时候找到当前菜单项的唯一标识
+        title:必填项，Toolbar栏的menu标题
+        [如果存在icon，则显示icon图标，不显示文字]
+        [如果不存在icon,则显示文字]
+        app:showAsAction = "ifRoom" ：显示为一个行为
+        android:showAsAction="ifRoom":icon失效显示图标为“3个竖立的点”
+    -->
+    <item android:id="@+id/toolbar_r_img"
+        android:title=""
+        android:icon="@mipmap/ic_tr_point"
+        app:showAsAction="ifRoom"
+        >
+        <!-- item包含menu表示该menu是item下的子菜单 -->
+       <!-- <menu>
+            &lt;!&ndash; 将group中的菜单项放于一个组里面 &ndash;&gt;
+            <group>
+                <item android:id="@+id/toolbar_r_1"
+                    android:title="搜索"
+                    android:icon="@mipmap/video_search"
+                    app:showAsAction="ifRoom"
+                    />
+                <item android:id="@+id/toolbar_r_2"
+                    android:title="收藏"
+                    android:icon="@mipmap/video_collection"
+                    app:showAsAction="ifRoom"
+                    />
+                <item android:id="@+id/toolbar_r_3"
+                    android:title="附近"
+                    android:icon="@mipmap/video_nearby"
+                    app:showAsAction="ifRoom"
+                    />
+            </group>
+        </menu>-->
+    </item>
+    </menu>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppBaseMyTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- 对应标题栏 toolbar（actionbar）颜色 -->
+        <item name="colorPrimary">#4EACFF</item>
+        <!-- 状态栏颜色 -->
+        <item name="colorPrimaryDark">#4EACFF</item>
+        <!-- 窗口的背景颜色 -->
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FF4081</item>
+        <item name="android:textColorPrimary">@color/toolbar_white</item>
+        <item name="toolbarNavigationButtonStyle">@style/myToolbarNavigationButtonStyle</item>
+        <item name="toolbarStyle">@style/clubToolbar</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowButtonStyle</item>
+        <item name="android:actionOverflowMenuStyle" tools:targetApi="lollipop">@style/OverFlowMenuStyle</item>
+        <!-- SearchView -->
+       <!-- <item name="searchViewStyle">@style/MySearchViewStyle</item>-->
+    </style>
+
+
+    <style name="myToolbarNavigationButtonStyle" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="titleMargin">10dp</item>
+    </style>
+    
+    <style name="clubToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetEnd">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+    <!--设置menu右边图标，默认是三个点的图标-->
+    <style name="OverflowButtonStyle" parent="@android:style/Widget.ActionButton.Overflow">
+        <item name="android:src">@mipmap/video_search</item>
+    </style>
+
+
+    <!--参考：http://blog.csdn.net/yingtian648/article/details/52432438-->
+    <style name="OverFlowMenuStyle" parent="@style/Theme.AppCompat.Light">
+        <!-- 是否覆盖锚点，默认为true，即盖住Toolbar -->
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownWidth">wrap_content</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:background">@drawable/toolbar_menu_pop_bg</item>
+        <!-- 弹出层背景颜色 -->
+        <item name="android:popupBackground">@color/toolbar_white</item>
+        <!-- 弹出层垂直方向上的偏移，即在竖直方向上距离Toolbar的距离，值为负则会盖住Toolbar -->
+        <item name="android:dropDownVerticalOffset">5dp</item>
+        <!-- 弹出层水平方向上的偏移，即距离屏幕左边的距离，负值会导致右边出现空隙 -->
+        <item name="android:dropDownHorizontalOffset">0dp</item>
+        <!-- 设置弹出菜单文字颜色 -->
+        <item name="android:textColor">@color/toolbar_theme</item>
+    </style>
+</resources>

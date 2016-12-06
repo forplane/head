@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 点击时 -->
+    <item android:state_pressed="true"><shape>
+        <solid android:color="#3a000000" />
+        <!-- 形状的填充色 -->
+        <corners android:bottomLeftRadius="180dp" android:bottomRightRadius="180dp"
+            android:topLeftRadius="180dp" android:topRightRadius="180dp" />
+    </shape></item>
+    <item><shape>
+        <solid android:color="#3a000000" />
+        <corners  android:bottomLeftRadius="180dp" android:bottomRightRadius="180dp"
+            android:topLeftRadius="180dp" android:topRightRadius="180dp" />
+        <!-- 形状的填充色 -->
+    </shape></item>
+
+</selector>

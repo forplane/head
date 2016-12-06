@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--toolbar的主题颜色-->
+    <color name="toolbar_theme">#3E98E2</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="toolbar_white">#ffffff</color>
+    <color name="toolbar_black">#000000</color>
+    <color name="status_transparent">#00000000</color>
+
+    <!--主题色-->
+    <color name="theme">#1cadf7</color>
+</resources>

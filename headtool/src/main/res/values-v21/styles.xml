@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="AppBaseMyTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+                <!-- 对应标题栏 toolbar（actionbar）颜色 -->
+                <item name="colorPrimary">#4876FF</item>
+                <!-- 状态栏颜色 -->
+                <item name="colorPrimaryDark">#4EACFF</item>
+                <!-- 窗口的背景颜色 -->
+                <item name="android:windowBackground">@android:color/white</item>
+                <item name="windowActionBar">false</item>
+                <item name="windowNoTitle">true</item>
+
+                <item name="android:textSize">12sp</item>
+                <item name="android:textColor">#FF4081</item>
+                <item name="toolbarNavigationButtonStyle">@style/myToolbarNavigationButtonStyle
+                </item>
+                <item name="toolbarStyle">@style/clubToolbar</item>
+                <item name="android:actionOverflowButtonStyle">@style/OverflowButtonStyle</item>
+                <item name="android:actionOverflowMenuStyle">@style/OverFlowMenuStyle</item>
+                <!-- SearchView -->
+                <!-- <item name="searchViewStyle">@style/MySearchViewStyle</item>-->
+        </style>
+</resources>
