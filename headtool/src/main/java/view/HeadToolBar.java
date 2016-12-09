@@ -50,13 +50,6 @@ public class HeadToolBar extends Toolbar {
 
     public static int TOOLBAR_HEIGHT = 0;
 
-    //全局变量,背景颜色，标题颜色等
-    public static int BACKGROUND_COLOR = R.color.theme;
-    public static int TITLE_COLOR  = R.color.toolbar_white;
-    public static int LOGO_IMAGE  = R.mipmap.head_vertical_line;
-    public static int NAVIGATION_ICON  = R.drawable.head_back;
-
-
     //rightText的文本
     private String defaultTextString;
     private String changeTextString;
@@ -175,15 +168,16 @@ public class HeadToolBar extends Toolbar {
     }
 
     private void initView() {
+        setContentInsetStartWithNavigation(0);
         //默认导航图标
-        setNavigationIcon(NAVIGATION_ICON);
-        setLogo(LOGO_IMAGE);
+        setNavigationIcon(R.drawable.head_back);
+        setLogo(R.mipmap.head_line);
         //默认标题
         setTitle(R.string.app_name);
         //默认标题颜色
-        setTitleColor(TITLE_COLOR);
+        setTitleColor(R.color.toolbar_white);
         //默认背景颜色
-        setBgColor(BACKGROUND_COLOR);
+        setBgColor(R.color.theme);
         //先不要调用该方法
 //        reSetHeadToolBarHeight(52);
 
@@ -192,7 +186,6 @@ public class HeadToolBar extends Toolbar {
             public void onClick(View v) {
 //                Toast.makeText(mContext, "返回", Toast.LENGTH_LONG).show();
                 scanForActivity(mContext).finish();
-                Log.i("", "");
             }
         });
 

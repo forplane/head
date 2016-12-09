@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven'
 apply plugin: 'signing'
 signing {
-    required { has("release") && gradle.taskGraph.hasTask("uploadArchives") }
+    required { hasProperty("release") && gradle.taskGraph.hasTask("uploadArchives") }
     sign configurations.archives
 }
 android {
@@ -12,8 +12,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 1612061620 //以时间格式1612061618
-        versionName "1.1.16"
+        versionCode 1612071410 //以时间格式1612061618
+        versionName "1.1.20"
     }
     buildTypes {
         release {
