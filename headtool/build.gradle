@@ -12,8 +12,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 1612071410 //以时间格式1612061618
-        versionName "1.1.20"
+        versionCode 1612071725 //以时间格式1612061618
+        versionName "1.1.23"
     }
     buildTypes {
         release {
@@ -41,6 +41,21 @@ android {
                 version android.defaultConfig.versionName
             }
         }
+    }
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from 'src/main/java'
+    }
+
+    artifacts {
+        archives sourcesJar
+    }
+
+}
+//Gradle每次构建都执行了默认的许多task，其中部分task是我们不需要执行的，至少在调试的时候不需要，我们可以把这些屏蔽掉，方法如下：
+tasks.whenTaskAdded { task ->
+    if (task.name.contains('AndroidTest') || task.name.contains('Test')) {
+        task.enabled = false
     }
 }
 

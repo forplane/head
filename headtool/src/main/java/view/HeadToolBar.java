@@ -50,6 +50,7 @@ public class HeadToolBar extends Toolbar {
 
     public static int TOOLBAR_HEIGHT = 0;
 
+
     //rightText的文本
     private String defaultTextString;
     private String changeTextString;
@@ -82,6 +83,41 @@ public class HeadToolBar extends Toolbar {
     @Nullable
     AttributeSet attrs;
     private int defStyleAttr;
+
+    //全局变量,背景颜色，标题颜色等
+    private static int BACKGROUND_COLOR = R.color.theme;//头部背景色
+    private static int TITLE_COLOR = R.color.toolbar_white;//头部标题文本色
+    private static int LOGO_IMAGE = R.mipmap.head_line;//竖线图片
+    private static int NAVIGATION_ICON = R.drawable.head_back;//返回图标
+    private static int NAVMAR = 0;//返回按钮跟屏幕间距
+    private static int NAVLOGOMAR = 0;//返回按钮跟竖线间距
+    private static int LOGOTITLEMAR = 8;//竖线跟标题间距
+
+    /**
+     * @param backColor  背景色    不需要设置传入0
+     * @param titleColor 标题文本色  不需要设置传入0
+     * @param logoIcon   竖线图标   不需要设置传入0
+     * @param navIcon    返回图标   不需要设置传入0
+     * @param navMar     返回左边距  不需要设置传入-1
+     * @param navLogMar  返回与竖线边距    不需要设置传入-1
+     * @param LogTitMar  竖线与标题边距    不需要设置传入-1
+     */
+    public static void setConfig(int backColor, int titleColor, int logoIcon, int navIcon, int navMar, int navLogMar, int LogTitMar) {
+        if (backColor != 0)
+            BACKGROUND_COLOR = backColor;
+        if (titleColor != 0)
+            TITLE_COLOR = titleColor;
+        if (logoIcon != 0)
+            LOGO_IMAGE = logoIcon;
+        if (navIcon != 0)
+            NAVIGATION_ICON = navIcon;
+        if (navMar != -1)
+            NAVMAR = navMar;
+        if (navLogMar != -1)
+            NAVLOGOMAR = navLogMar;
+        if (LogTitMar != -1)
+            LOGOTITLEMAR = LogTitMar;
+    }
 
 
     public HeadToolBar(Context context) {
@@ -168,16 +204,18 @@ public class HeadToolBar extends Toolbar {
     }
 
     private void initView() {
-        setContentInsetStartWithNavigation(0);
+        setContentInsetStartWithNavigation(NAVLOGOMAR);
+        setContentInsetsAbsolute(NAVMAR, NAVMAR);
+        setTitleMarginStart(LOGOTITLEMAR);
         //默认导航图标
-        setNavigationIcon(R.drawable.head_back);
-        setLogo(R.mipmap.head_line);
+        setNavigationIcon(NAVIGATION_ICON);
+        setLogo(LOGO_IMAGE);
         //默认标题
         setTitle(R.string.app_name);
         //默认标题颜色
-        setTitleColor(R.color.toolbar_white);
+        setTitleColor(TITLE_COLOR);
         //默认背景颜色
-        setBgColor(R.color.theme);
+        setBgColor(BACKGROUND_COLOR);
         //先不要调用该方法
 //        reSetHeadToolBarHeight(52);
 
@@ -186,6 +224,7 @@ public class HeadToolBar extends Toolbar {
             public void onClick(View v) {
 //                Toast.makeText(mContext, "返回", Toast.LENGTH_LONG).show();
                 scanForActivity(mContext).finish();
+                Log.i("", "");
             }
         });
 
@@ -264,7 +303,7 @@ public class HeadToolBar extends Toolbar {
             rightText = new TextView(mContext);
             if (textColor > 0) {
                 rightText.setTextColor(getResources().getColor(textColor));
-            }else {
+            } else {
                 rightText.setTextColor(getResources().getColor(R.color.toolbar_white));
             }
             v = rightText;
@@ -403,7 +442,7 @@ public class HeadToolBar extends Toolbar {
             textView.setLayoutParams(params);
             if (textColor > 0) {
                 textView.setTextColor(getResources().getColor(textColor));
-            }else {
+            } else {
                 textView.setTextColor(getResources().getColor(R.color.toolbar_white));
             }
             if (!TextUtils.isEmpty(rightViewTextString)) {
@@ -587,11 +626,12 @@ public class HeadToolBar extends Toolbar {
 
     /**
      * 改变右边图标文本字体颜色
+     *
      * @param position
      * @param color
      * @return
      */
-    public View setRightChangeTextColor(int position,int color){
+    public View setRightChangeTextColor(int position, int color) {
         TextView view = (TextView) rightLay.getChildAt(position);
         view.setTextColor(getResources().getColor(color));
         return view;
@@ -873,7 +913,6 @@ public class HeadToolBar extends Toolbar {
     public void setToolBarPopInterface(ToolBarPopInterface toolBarPopInterface) {
         this.toolBarPopInterface = toolBarPopInterface;
     }
-
 
 
 }
