@@ -25,6 +25,7 @@ public class MainActivity extends Activity {
         headToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //测试push
                 Intent intent = new Intent(MainActivity.this, HeadTestActivity.class);
                 startActivity(intent);
             }
