@@ -42,6 +42,15 @@ android {
             }
         }
     }
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from 'src/main/java'
+    }
+
+    artifacts {
+        archives sourcesJar
+    }
+
 }
 //Gradle每次构建都执行了默认的许多task，其中部分task是我们不需要执行的，至少在调试的时候不需要，我们可以把这些屏蔽掉，方法如下：
 tasks.whenTaskAdded { task ->
