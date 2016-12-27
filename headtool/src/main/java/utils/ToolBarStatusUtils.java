@@ -505,9 +505,7 @@ public class ToolBarStatusUtils {
 
     /**
      * 隐藏状态栏（适用于背景图片延伸到状态栏的情况）
-     *
      * @param bar
-     * @return
      */
     public static void setStatusGone(LinearLayout bar) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -520,9 +518,7 @@ public class ToolBarStatusUtils {
 
     /**
      * 隐藏状态栏（适用于背景图片延伸到状态栏的情况）
-     *
      * @param bar
-     * @return
      */
     public static void setStatusGone(LinearLayout bar, boolean isBackGround, int color) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

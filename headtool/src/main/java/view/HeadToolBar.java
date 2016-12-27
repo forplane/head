@@ -34,7 +34,8 @@ import java.lang.reflect.Field;
 import interfaces.RightOnclick;
 
 /**
- * Created by SunySan on 2016/10/30.</br>
+ * Created by SunySan on 2016/10/30.
+ *
  */
 public class HeadToolBar extends Toolbar {
     //右边图标的位置
