@@ -26,7 +26,7 @@
         <item name="android:scaleType">centerInside</item>
         <item name="contentInsetStart">0dp</item>
         <item name="contentInsetStartWithNavigation">0dp</item>
-        <item name="titleMargin">10dp</item>
+        <item name="titleMargin">0dp</item>
     </style>
     
     <style name="clubToolbar" parent="Widget.AppCompat.Toolbar">
