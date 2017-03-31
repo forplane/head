@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
-version = "1.2.0"
+version = "1.3"
 
 android {
     compileSdkVersion 24
@@ -10,7 +10,7 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 1612071725 //以时间格式1612061618
+        versionCode 1703311500 //以时间格式1612061618
         versionName version
     }
     buildTypes {
@@ -33,8 +33,8 @@ dependencies {
 }
 
 
-def siteUrl = 'https://github.com/Reproxy/head'      // 项目的主页   这个是说明，可随便填
-def gitUrl = 'https://github.com/Reproxy/head'      // Git仓库的url  这个是说明，可随便填
+def siteUrl = 'https://github.com/forplane/head.git'      // 项目的主页   这个是说明，可随便填
+def gitUrl = 'https://github.com/forplane/head.git'      // Git仓库的url  这个是说明，可随便填
 group = "com.yidont"    // 这里是groupId ,必须填写  一般填你唯一的包名
 
 install {
